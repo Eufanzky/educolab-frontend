@@ -1,39 +1,78 @@
-Welcome to Educolab
-## Production mode
+<div align="center">
 
-for see the project on production you can click [here : http://18.119.143.131:3015](http://18.119.143.131:3015/)
+# 🎓 EduColab — Frontend
 
-## Developer mode
+**A collaborative learning platform built by a team of four for the Platzi × New Relic Hackathon (May 2023).**
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-13-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![CSS Modules](https://img.shields.io/badge/CSS_Modules-000000?logo=css3&logoColor=white)](https://github.com/css-modules/css-modules)
+[![New Relic](https://img.shields.io/badge/New_Relic-1CE783?logo=newrelic&logoColor=black)](https://newrelic.com/)
 
-First, run the development server:
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+> **This is my fork of [`EduColab/frontend`](https://github.com/EduColab/frontend).**
+> It's kept public as a record of my contribution to the project. Full credit for the platform goes to the whole team — see [Team](#-team) below.
+
+---
+
+## 👤 My Role
+
+I was the **second-largest contributor** on this codebase, with **64 commits across 18 merged pull requests**, working on a shared `task → stage → main` branching workflow.
+
+**What I built:**
+
+| Area | Contribution |
+|:-----|:-------------|
+| 🏘️ **Community section** | Built the community page end to end — layout, sections, styles, and API integration |
+| 📝 **Registration & login** | Register page, plus link wiring and flow for the auth pages |
+| 📤 **Course upload form** | `FormUploadCourse` — form handling and submission logic |
+| 🔌 **API integration** | Wired several pages to the backend via `axios` |
+| 🚪 **`NoLogin` component** | Logged-out state and its integration into the community page |
+| ℹ️ **About page** | Built the page and its styling |
+
+Working on a four-person team meant regularly rebasing on `upstream/stage` and resolving merge conflicts — a good chunk of the commit log is exactly that.
+
+## 🧱 Tech Stack
+
+- **Next.js 13** with the App Router (`src/app/`)
+- **React 18**
+- **CSS Modules** — scoped styles co-located per component
+- **axios** for API consumption
+- **New Relic** APM instrumentation (the hackathon's sponsor challenge)
+- **GitHub Actions** CI (`.github/workflows/node.js.yml`)
+- Separate `stage` and `production` environment configs
+
+## 📁 Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── community/          # Community hub
+│   ├── curso/[id]/         # Course detail (dynamic route)
+│   ├── carrera/[id]/       # Career track detail
+│   ├── university/[id]/    # University pages
+│   ├── login/  register/   # Auth pages
+│   └── about/
+└── components/             # Component + co-located CSS Module
+    ├── CommunitySection/
+    ├── CommunityCourses/
+    ├── FormUploadCourse/
+    ├── LoginForm/
+    └── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Running Locally
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## 👥 Team
 
-To learn more about Next.js, take a look at the following resources:
+Built by [@Duvier-Reinosa](https://github.com/Duvier-Reinosa), [@Eufanzky](https://github.com/Eufanzky), [@castlewhites](https://github.com/castlewhites) and [@UzyOrg](https://github.com/UzyOrg).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Upstream repository: **[EduColab/frontend](https://github.com/EduColab/frontend)**
